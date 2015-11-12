@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151112213022) do
+=======
+ActiveRecord::Schema.define(version: 20151111212151) do
+>>>>>>> fae72b46072a805a72fa5bcbfb86c7267a77c3f6
 
   create_table "activitytypes", force: :cascade do |t|
     t.string   "description"
@@ -39,6 +43,7 @@ ActiveRecord::Schema.define(version: 20151112213022) do
 
   add_index "clients", ["internal_id"], name: "index_clients_on_internal_id"
 
+<<<<<<< HEAD
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -56,6 +61,8 @@ ActiveRecord::Schema.define(version: 20151112213022) do
   add_index "projects", ["client_id"], name: "index_projects_on_client_id"
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
+=======
+>>>>>>> fae72b46072a805a72fa5bcbfb86c7267a77c3f6
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
