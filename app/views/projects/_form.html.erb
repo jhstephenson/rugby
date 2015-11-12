@@ -1,0 +1,19 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :started_on %>
+    <%= f.input :completed_on %>
+    <%= f.input :estimated_completion %>
+    <%= f.input :estimated_hours %>
+    <%= f.input :actual_hours %>
+    <%= f.association :user %>
+    <%= f.association :client %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
