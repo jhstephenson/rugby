@@ -3,15 +3,17 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :address_line_1 %>
-    <%= f.input :address_line_2 %>
-    <%= f.input :city %>
-    <%= f.input :state %>
-    <%= f.input :zip %>
+    <p><strong>Address</strong></p>
+    <%= f.input_field :address_line_1, placeholder: 'Address Line 1' %>
+    <%= f.input_field :address_line_2, placeholder: 'Address Line 2' %>
+    <%= f.input_field :city, placeholder: 'City' %>
+    <%= f.input_field :state, placeholder: 'State' %>
+    <%= f.input_field :zip, placeholder: 'Zip Code' %>
     <%= f.input :phone %>
-    <%= f.input :contact_name %>
-    <%= f.input :contact_email %>
-    <%= f.input :contact_phone %>
+    <p><strong>Contact</strong></p>
+    <%= f.input_field :contact_name, placeholder: 'Name' %>
+    <%= f.input_field :contact_email, placeholder: 'Email' %>
+    <%= f.input_field :contact_phone, placeholder: 'Phone' %>
     <%= f.input :billing_rate %>
     <%= f.input :status %>
     <%= f.input :internal_id %>
