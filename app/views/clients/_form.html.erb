@@ -14,9 +14,12 @@
     <%= f.input_field :contact_name, placeholder: 'Name' %>
     <%= f.input_field :contact_email, placeholder: 'Email' %>
     <%= f.input_field :contact_phone, placeholder: 'Phone' %>
-    <%= f.input :billing_rate %>
-    <%= f.input :status %>
-    <%= f.input :internal_id %>
+    <p><strong>Billing Rate: </strong></p>
+    <%= f.input_field :billing_rate %>
+    <p><strong>Status: </strong></p>
+    <%= f.input_field :status %>
+    <p><strong>Internal ID: </strong></p>
+    <%= f.input_field :internal_id %>
   </div>
 
   <div class="form-actions">
