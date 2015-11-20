@@ -1,7 +1,7 @@
-<%= simple_form_for(@client) do |f| %>
+<%= simple_form_for @client do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-horizontal">
     <%= f.input :name %>
     <p><strong>Address</strong></p>
     <%= f.input_field :address_line_1, placeholder: 'Address Line 1' %>
@@ -15,9 +15,9 @@
     <%= f.input_field :contact_email, placeholder: 'Email' %>
     <%= f.input_field :contact_phone, placeholder: 'Phone' %>
     <p> </p>
-    <p><strong>Billing Rate: </strong><%= f.input_field :billing_rate %></p>
-    <p><strong>Status:       </strong><%= f.input_field :status %></p>
-    <p><strong>Internal ID:  </strong><%= f.input_field :internal_id %></p>
+    <%= f.input :billing_rate %>
+    <%= f.input :status %>
+    <%= f.input :internal_id %>
 
   </div>
 
