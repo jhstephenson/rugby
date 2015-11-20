@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= link_to "Name", :sort => "name" %></th>
+      <th><%= link_to "Internal ID", :sort => "internal_id" %></th>
       <th>Address line 1</th>
       <th>City</th>
       <th>State</th>
@@ -14,7 +15,7 @@
       <th>Contact email</th>
       <th>Contact phone</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -22,6 +23,7 @@
     <% @clients.each do |client| %>
       <tr>
         <td><%= client.name %></td>
+        <td><%= client.internal_id %></td>
         <td><%= client.address_line_1 %></td>
         <td><%= client.city %></td>
         <td><%= client.state %></td>
@@ -32,7 +34,6 @@
         <td><%= client.status %></td>
         <td><%= link_to 'Show', client %></td>
         <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
