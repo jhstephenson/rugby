@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151112213022) do
-=======
-ActiveRecord::Schema.define(version: 20151111212151) do
->>>>>>> fae72b46072a805a72fa5bcbfb86c7267a77c3f6
+ActiveRecord::Schema.define(version: 20151201224700) do
 
   create_table "activitytypes", force: :cascade do |t|
     t.string   "description"
@@ -43,7 +39,24 @@ ActiveRecord::Schema.define(version: 20151111212151) do
 
   add_index "clients", ["internal_id"], name: "index_clients_on_internal_id"
 
-<<<<<<< HEAD
+  create_table "daily_activities", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.decimal  "hours"
+    t.string   "description"
+    t.boolean  "billable"
+    t.decimal  "rate"
+    t.integer  "project_id"
+    t.boolean  "merged"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "daily_activities", ["client_id"], name: "index_daily_activities_on_client_id"
+  add_index "daily_activities", ["project_id"], name: "index_daily_activities_on_project_id"
+  add_index "daily_activities", ["user_id"], name: "index_daily_activities_on_user_id"
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -61,8 +74,6 @@ ActiveRecord::Schema.define(version: 20151111212151) do
   add_index "projects", ["client_id"], name: "index_projects_on_client_id"
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
-=======
->>>>>>> fae72b46072a805a72fa5bcbfb86c7267a77c3f6
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Clients</h1>
+<h1>Client List</h1>
 
 <%= will_paginate @clients, renderer: BootstrapPagination::Rails %>
 
@@ -23,20 +23,20 @@
 
   <tbody>
     <% @clients.each do |client| %>
-      <tr>
-        <td><%= client.name %></td>
-        <td><%= client.internal_id %></td>
-        <td><%= client.address_line_1 %></td>
-        <td><%= client.city %></td>
-        <td><%= client.state %></td>
-        <td><%= client.phone %></td>
-        <td><%= client.contact_name %></td>
-        <td><%= client.contact_email %></td>
-        <td><%= client.contact_phone %></td>
-        <td><%= client.status %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-      </tr>
+    <tr>
+      <td><%= client.name %></td>
+      <td><%= client.internal_id %></td>
+      <td><%= client.address_line_1 %></td>
+      <td><%= client.city %></td>
+      <td><%= client.state %></td>
+      <td><%= client.phone %></td>
+      <td><%= client.contact_name %></td>
+      <td><%= client.contact_email %></td>
+      <td><%= client.contact_phone %></td>
+      <td><%= client.status %></td>
+      <td><%= link_to 'Show', client %></td>
+      <td><%= link_to 'Edit', edit_client_path(client) %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

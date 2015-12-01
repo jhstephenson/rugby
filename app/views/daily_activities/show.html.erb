@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @daily_activity.date %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @daily_activity.client %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @daily_activity.user %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @daily_activity.hours %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @daily_activity.description %>
+</p>
+
+<p>
+  <strong>Billable:</strong>
+  <%= @daily_activity.billable %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @daily_activity.rate %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @daily_activity.project %>
+</p>
+
+<p>
+  <strong>Merged:</strong>
+  <%= @daily_activity.merged %>
+</p>
+
+<%= link_to 'Edit', edit_daily_activity_path(@daily_activity) %> |
+<%= link_to 'Back', daily_activities_path %>
