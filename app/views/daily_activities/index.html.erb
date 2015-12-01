@@ -2,7 +2,7 @@
 
 <h1>Listing Daily Activities</h1>
 
-<table>
+<table class='table table-bordered'>
   <thead>
     <tr>
       <th>Date</th>
@@ -22,8 +22,8 @@
     <% @daily_activities.each do |daily_activity| %>
       <tr>
         <td><%= daily_activity.date %></td>
-        <td><%= daily_activity.client %></td>
-        <td><%= daily_activity.user %></td>
+        <td><%= daily_activity.client.name %></td>
+        <td><%= daily_activity.user.name %></td>
         <td><%= daily_activity.hours %></td>
         <td><%= daily_activity.description %></td>
         <td><%= daily_activity.billable %></td>
