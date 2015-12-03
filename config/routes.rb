@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   resources :activitytypes
   mount Upmin::Engine => '/admin'
-  root to: 'visitors#index'
+#  root to: 'visitors#index'
   devise_for :users
   resources :users
+
+  authenticated :user do
+    root to: 'visitors#index', as: :authenticated_root
+  end
+  root to: redirect('/users/sign_in')
+
 end
