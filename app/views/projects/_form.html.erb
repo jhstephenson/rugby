@@ -2,15 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.association :client %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :started_on %>
-    <%= f.input :completed_on %>
     <%= f.input :estimated_completion %>
+    <%= f.input :completed_on %>
     <%= f.input :estimated_hours %>
     <%= f.input :actual_hours %>
-    <%= f.association :user %>
-    <%= f.association :client %>
+    <%= f.association :user, :label => "Assign To:" %>
   </div>
 
   <div class="form-actions">
