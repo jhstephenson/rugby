@@ -11,7 +11,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
-gem 'upmin-admin'
+
 gem 'will_paginate-bootstrap'
 
 group :development do
