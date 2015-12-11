@@ -2,8 +2,8 @@
 
 <h1>Client List</h1>
 
-<%= will_paginate @clients, renderer: BootstrapPagination::Rails %>
-
+# <%= will_paginate @clients, renderer: BootstrapPagination::Rails %>
+<%= link_to 'New Client', new_client_path %>
 <table class='table table-bordered'>
   <thead>
     <tr>

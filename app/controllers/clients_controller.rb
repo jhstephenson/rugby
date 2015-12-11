@@ -4,7 +4,8 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.order(params[:sort]).paginate(:page => params[:page], per_page: 10)
+#   @clients = Client.order(params[:sort]).paginate(:page => params[:page], per_page: 10)
+    @clients = Client.order(params[:sort])
     respond_to do |format|
       format.html
       format.csv { send_data @clients.to_csv }
