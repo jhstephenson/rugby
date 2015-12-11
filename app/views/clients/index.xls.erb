@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Name</Data></Cell>
+        <Cell><Data ss:Type="String">Address Line 1</Data></Cell>
+        <Cell><Data ss:Type="String">Address Line 2</Data></Cell>
+        <Cell><Data ss:Type="String">City</Data></Cell>
+        <Cell><Data ss:Type="String">State</Data></Cell>
+        <Cell><Data ss:Type="String">Zip</Data></Cell>
+        <Cell><Data ss:Type="String">Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Contact Name</Data></Cell>
+        <Cell><Data ss:Type="String">Contact Email</Data></Cell>
+        <Cell><Data ss:Type="String">Contact Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Billing Rate</Data></Cell>
+        <Cell><Data ss:Type="String">Status</Data></Cell>
+        <Cell><Data ss:Type="String">Internal ID</Data></Cell>
+      </Row>
+    <% @clients.each do |client| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= client.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= client.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= client.address_line_1 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.address_line_2 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.city %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.state %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= client.zip %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.phone %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.contact_name %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.contact_email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= client.contact_phone %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.billing_rate %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.status %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= client.internal_id %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

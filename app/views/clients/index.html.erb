@@ -44,3 +44,7 @@
 <br>
 
 <%= link_to 'New Client', new_client_path %>
+<p>
+  Download:
+  <%= link_to "CSV", clients_path(format: "csv") %>
+</p>
