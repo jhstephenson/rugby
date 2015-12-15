@@ -22,18 +22,18 @@
     <% @daily_activities.each do |daily_activity| %>
       <tr>
         <td><%= daily_activity.date %></td>
-        
-        <td>
-          <% unless daily_activity.user.blank? %>
-          <%= daily_activity.user.name %>
-          <% end %>
-        </td>
+
         <td>
           <% unless daily_activity.client.blank? %>
-          <%= daily_activity.client.name %>
+            <%= daily_activity.client.name %>
           <% end %>
         </td>
-        
+        <td>
+          <% unless daily_activity.user.blank? %>
+            <%= daily_activity.user.name %>
+          <% end %>
+        </td>
+
         <td><%= daily_activity.hours %></td>
         <td><%= daily_activity.description %></td>
         <td><%= daily_activity.billable %></td>
