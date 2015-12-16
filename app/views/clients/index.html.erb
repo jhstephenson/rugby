@@ -2,6 +2,11 @@
 
 <h1>Client List</h1>
 
+<%= form_tag "/clients", method: :get do %>
+<%= text_field_tag :client_name, params[:client_name], placeholder: "Client Name" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <%= will_paginate @clients, renderer: BootstrapPagination::Rails %>
 <%= link_to 'New Client', new_client_path %>
 <table class='table table-bordered'>

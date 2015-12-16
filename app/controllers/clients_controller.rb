@@ -4,8 +4,8 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.order(params[:sort]).paginate(:page => params[:page], per_page: 500)
- 
+    @clients = Client.filter(filtering_params(params)).order(params[:sort]).paginate(:page => params[:page], per_page: 500)
+
     respond_to do |format|
       format.html
       format.csv { send_data @clients.to_csv }
@@ -75,5 +75,8 @@ class ClientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
       params.require(:client).permit(:name, :address_line_1, :address_line_2, :city, :state, :zip, :phone, :contact_name, :contact_email, :contact_phone, :billing_rate, :status, :internal_id)
+    end
+    def filtering_params(params)
+      params.slice(:client_name)
     end
 end

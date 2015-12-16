@@ -25,8 +25,12 @@
 #
 
 class Client < ActiveRecord::Base
+  include Filterable
+
   has_many :projects
   has_many :daily_activities
+
+  scope :client_name, -> (client_name) { where("name like ?", "%#{client_name}%") }
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
@@ -36,5 +40,5 @@ class Client < ActiveRecord::Base
       end
     end
   end
-  
+
 end
