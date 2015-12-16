@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'annotate'
 
 gem 'will_paginate-bootstrap'
 
