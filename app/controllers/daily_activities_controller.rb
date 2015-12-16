@@ -15,6 +15,7 @@ class DailyActivitiesController < ApplicationController
   # GET /daily_activities/new
   def new
     @daily_activity = DailyActivity.new
+    @daily_activity.user_id = current_user.id
   end
 
   # GET /daily_activities/1/edit
@@ -25,7 +26,6 @@ class DailyActivitiesController < ApplicationController
   # POST /daily_activities.json
   def create
     @daily_activity = DailyActivity.new(daily_activity_params)
-
     respond_to do |format|
       if @daily_activity.save
         format.html { redirect_to @daily_activity, notice: 'Daily activity was successfully created.' }
