@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Messages</h1>
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>For</th>
+      <th>Client</th>
+      <th>Name</th>
+      <th>Received</th>
+      <th>Phone</th>
+      <th>Cell</th>
+      <th>Message</th>
+      <th>Telephoned</th>
+      <th>Returned your call</th>
+      <th>Please call</th>
+      <th>Will call again</th>
+      <th>Came to see you</th>
+      <th>Wants to see you</th>
+      <th>Other</th>
+      <th>Other text</th>
+      <th>Status</th>
+      <th>Taken by</th>
+      <th>Resolved</th>
+      <th>From</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.user %></td>
+        <td><%= message.client %></td>
+        <td><%= message.name %></td>
+        <td><%= message.received %></td>
+        <td><%= message.phone %></td>
+        <td><%= message.cell %></td>
+        <td><%= message.message %></td>
+        <td><%= message.telephoned %></td>
+        <td><%= message.returned_your_call %></td>
+        <td><%= message.please_call %></td>
+        <td><%= message.will_call_again %></td>
+        <td><%= message.came_to_see_you %></td>
+        <td><%= message.wants_to_see_you %></td>
+        <td><%= message.other %></td>
+        <td><%= message.other_text %></td>
+        <td><%= message.status %></td>
+        <td><%= message.taken_by %></td>
+        <td><%= message.resolved %></td>
+        <td><%= message.from %></td>
+        <td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Edit', edit_message_path(message) %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_message_path %>

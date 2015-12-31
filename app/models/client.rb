@@ -29,6 +29,7 @@ class Client < ActiveRecord::Base
 
   has_many :projects
   has_many :daily_activities
+  has_many :messages
 
   scope :client_name, -> (client_name) { where("name like ?", "%#{client_name}%") }
 

@@ -1,0 +1,34 @@
+<%= simple_form_for(@message) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user, collection: User.order(:name), prompt: "Who is this message for?" %>
+    <%= f.input :from %>
+    <%= f.input :name, prompt: "Who is leaving the message?" %>
+    
+    <%= f.association :client, collection: Client.order(:name), prompt: "Choose a Client" %>
+    
+    <%= f.input :received %>
+    <%= f.input :phone %>
+    <%= f.input :cell %>
+
+    <%= f.input :message %>
+    <%= f.input :telephoned %>
+    <%= f.input :returned_your_call %>
+    <%= f.input :please_call %>
+    <%= f.input :will_call_again %>
+    <%= f.input :came_to_see_you %>
+    <%= f.input :wants_to_see_you %>
+    <%= f.input :other %>
+    <%= f.input :other_text %>
+
+    <%= f.input :status %>
+    <%= f.input :taken_by %>
+    <%= f.input :resolved %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

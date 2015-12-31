@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
 
   has_many :daily_activities
   has_many :projects
+  has_many :messages
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

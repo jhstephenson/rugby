@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201224700) do
+ActiveRecord::Schema.define(version: 20151231175924) do
 
   create_table "activitytypes", force: :cascade do |t|
     t.string   "description"
@@ -56,6 +56,33 @@ ActiveRecord::Schema.define(version: 20151201224700) do
   add_index "daily_activities", ["client_id"], name: "index_daily_activities_on_client_id"
   add_index "daily_activities", ["project_id"], name: "index_daily_activities_on_project_id"
   add_index "daily_activities", ["user_id"], name: "index_daily_activities_on_user_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.string   "name"
+    t.datetime "received"
+    t.string   "phone"
+    t.string   "cell"
+    t.text     "message"
+    t.boolean  "telephoned"
+    t.boolean  "returned_your_call"
+    t.boolean  "please_call"
+    t.boolean  "will_call_again"
+    t.boolean  "came_to_see_you"
+    t.boolean  "wants_to_see_you"
+    t.boolean  "other"
+    t.text     "other_text"
+    t.string   "status"
+    t.string   "taken_by"
+    t.datetime "resolved"
+    t.string   "from"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "messages", ["client_id"], name: "index_messages_on_client_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
