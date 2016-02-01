@@ -30,4 +30,15 @@ class Tasklist < ActiveRecord::Base
   belongs_to :client
   belongs_to :project
   belongs_to :status
+
+  before_create :assign_dates
+
+  private
+
+  def assign_dates
+    self.start_date             = '0000-00-00'
+    self.date_needed_by         = '0000-00-00'
+    self.actual_date_completed  = '0000-00-00'
+  end
+
 end
