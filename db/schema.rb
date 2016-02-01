@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231175924) do
+ActiveRecord::Schema.define(version: 20160201154847) do
 
   create_table "activitytypes", force: :cascade do |t|
     t.string   "description"
@@ -100,6 +100,33 @@ ActiveRecord::Schema.define(version: 20151231175924) do
 
   add_index "projects", ["client_id"], name: "index_projects_on_client_id"
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+
+  create_table "statuses", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasklists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.integer  "project_id"
+    t.string   "taskname"
+    t.text     "description"
+    t.integer  "status_id"
+    t.decimal  "estimated_time_to_complete"
+    t.date     "start_date"
+    t.date     "date_needed_by"
+    t.date     "actual_date_completed"
+    t.decimal  "actual_time_to_complete"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "tasklists", ["client_id"], name: "index_tasklists_on_client_id"
+  add_index "tasklists", ["project_id"], name: "index_tasklists_on_project_id"
+  add_index "tasklists", ["status_id"], name: "index_tasklists_on_status_id"
+  add_index "tasklists", ["user_id"], name: "index_tasklists_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tasklists
+  resources :statuses
   resources :messages
   devise_for :users
   resources :users  

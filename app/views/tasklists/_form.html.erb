@@ -1,0 +1,21 @@
+<%= simple_form_for(@tasklist) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.association :client %>
+    <%= f.association :project %>
+    <%= f.input :taskname %>
+    <%= f.input :description %>
+    <%= f.association :status %>
+    <%= f.input :estimated_time_to_complete %>
+    <%= f.input :start_date %>
+    <%= f.input :date_needed_by %>
+    <%= f.input :actual_date_completed %>
+    <%= f.input :actual_time_to_complete %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

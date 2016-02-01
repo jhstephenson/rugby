@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tasklist.user %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @tasklist.client %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @tasklist.project %>
+</p>
+
+<p>
+  <strong>Taskname:</strong>
+  <%= @tasklist.taskname %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tasklist.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @tasklist.status %>
+</p>
+
+<p>
+  <strong>Estimated time to complete:</strong>
+  <%= @tasklist.estimated_time_to_complete %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @tasklist.start_date %>
+</p>
+
+<p>
+  <strong>Date needed by:</strong>
+  <%= @tasklist.date_needed_by %>
+</p>
+
+<p>
+  <strong>Actual date completed:</strong>
+  <%= @tasklist.actual_date_completed %>
+</p>
+
+<p>
+  <strong>Actual time to complete:</strong>
+  <%= @tasklist.actual_time_to_complete %>
+</p>
+
+<%= link_to 'Edit', edit_tasklist_path(@tasklist) %> |
+<%= link_to 'Back', tasklists_path %>

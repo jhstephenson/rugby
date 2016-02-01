@@ -26,18 +26,19 @@
 
 FactoryGirl.define do
   factory :client do
-    name "MyString"
-address_line_1 "MyString"
-address_line_2 "MyString"
-city "MyString"
-state "MyString"
-zip "MyString"
-phone "MyString"
-contact_name "MyString"
-contact_email "MyString"
-contact_phone "MyString"
-billing_rate "9.99"
-status "MyString"
+    name            { Faker::Name.name }
+    address_line_1  { Faker::Address.street_address }
+    address_line_2  { Faker::Address.secondary_address }
+    city            { Faker::Address.city }
+    state           { Faker::Address.state }
+    zip             { Faker::Address.zip }
+    phone           { Faker::PhoneNumber.phone_number }
+    contact_name    { Faker::Name.name }
+    contact_email   { Faker::Internet.email }
+    contact_phone   { Faker::PhoneNumber.phone_number }
+    billing_rate    { Faker::Commerce.price }
+    status          { Faker::Hacker.verb }
+    internal_id     { Faker::Number.number(5) }
   end
 
 end

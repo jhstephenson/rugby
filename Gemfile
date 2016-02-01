@@ -27,7 +27,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
-  gem 'spring-commands-rspec'
+#  gem 'spring-commands-rspec'
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -36,7 +36,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+#  gem 'spring'
 end
 group :production do
   gem 'pg'
@@ -47,4 +47,5 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.0', require: false
 end
