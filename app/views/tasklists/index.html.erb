@@ -2,14 +2,13 @@
 
 <h1>Listing Tasklists</h1>
 
-<table>
+<table class='table table-bordered'>
   <thead>
     <tr>
       <th>User</th>
       <th>Client</th>
       <th>Project</th>
       <th>Taskname</th>
-      <th>Description</th>
       <th>Status</th>
       <th>Estimated time to complete</th>
       <th>Start date</th>
@@ -23,12 +22,30 @@
   <tbody>
     <% @tasklists.each do |tasklist| %>
       <tr>
-        <td><%= tasklist.user %></td>
-        <td><%= tasklist.client %></td>
-        <td><%= tasklist.project %></td>
+        <td>
+          <% unless tasklist.user.blank? %>
+            <%= tasklist.user.name %>
+          <% end %>
+        </td>
+        <td>
+          <% unless tasklist.client.blank? %>
+            <%= tasklist.client.name %>
+          <% end %>
+        </td>
+        <td>
+          <% unless tasklist.project.blank? %>
+            <%= tasklist.project.name %>
+          <% end %>
+        </td>
+
         <td><%= tasklist.taskname %></td>
-        <td><%= tasklist.description %></td>
-        <td><%= tasklist.status %></td>
+
+        <td>
+          <% unless tasklist.status.blank? %>
+            <%= tasklist.status.status %>
+          <% end %>
+        </td>
+
         <td><%= tasklist.estimated_time_to_complete %></td>
         <td><%= tasklist.start_date %></td>
         <td><%= tasklist.date_needed_by %></td>
