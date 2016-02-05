@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Tasklists</h1>
+<h1>Tasks</h1>
 
 <table class='table table-bordered'>
   <thead>
@@ -51,9 +49,21 @@
         <td><%= tasklist.date_needed_by %></td>
         <td><%= tasklist.actual_date_completed %></td>
         <td><%= tasklist.actual_time_to_complete %></td>
-        <td><%= link_to 'Show', tasklist %></td>
-        <td><%= link_to 'Edit', edit_tasklist_path(tasklist) %></td>
-        <td><%= link_to 'Destroy', tasklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to tasklist do %>
+            <span class="glyphicon glyphicon-search"></span>
+          <%- end -%>
+        </td>
+        <td>
+          <%= link_to edit_tasklist_path(tasklist) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+          <%- end -%>
+        </td>
+        <td>
+          <%= link_to tasklist, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
