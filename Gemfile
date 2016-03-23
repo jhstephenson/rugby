@@ -27,6 +27,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'web-console', '~> 2.0'
 #  gem 'spring-commands-rspec'
 end
 group :development, :test do
@@ -35,7 +36,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
+  
 #  gem 'spring'
 end
 group :production do
