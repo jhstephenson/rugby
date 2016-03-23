@@ -31,8 +31,8 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.user.name %></td>
-        <td><%= message.client.name %></td>
+        <td><%= message.user %></td>
+        <td><%= message.client %></td>
         <td><%= message.name %></td>
         <td><%= message.received %></td>
         <td><%= message.phone %></td>
